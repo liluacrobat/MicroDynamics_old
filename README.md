@@ -6,3 +6,9 @@ The setup process for the proposed pipeline requires the following steps:
 ```bash
 git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
+# Usage
+1. Prepare microbial data
+2. Feature selection
+3. Random sampling based consensus clustering
+4. Embedded structuring learning
+# Example
