@@ -39,3 +39,4 @@ Sample_3  B2/B3
 We provide two files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU, a meta data file CD_meta_clinic. We can learn a microbial progression model by running MicroDynamics.m file.
 
 # Reference
+[1] Halfvarson, Jonas, Colin J. Brislawn, Regina Lamendella, Yoshiki Vázquez-Baeza, William A. Walters, Lisa M. Bramer, Mauro D'amato et al. "Dynamics of the human gut microbiome in inflammatory bowel disease." *Nature Microbiology* 2, no. 5 (2017): 1-7.
