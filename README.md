@@ -2,7 +2,7 @@
 MicroDynamics is a pipeline for delineating community dynamics of human microbiome associated with disease progression.
 # Setup
 The setup process for the proposed pipeline requires the following steps:
-## Download pipeline
+## Download the pipeline
 ```bash
 git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
@@ -20,8 +20,8 @@ OTU3  27  208 74
 ```bash
 Sample_ID Disease_behavior
 Sample_1  HC
-Sample_2  B1
-Sample_3  B2/B3
+Sample_2  Penetrating (B3)
+Sample_3  Inflammatory (B1)
 ```
 
 ## Running
