@@ -36,6 +36,6 @@ Sample_3  B2/B3
 ## Output
 
 # Example
-We provide two files of a human gut microbiome data set [1] in the example directory: a OTU table file OTU_16S, a meta data file meta_clinic. We can learn a microbial progression model by running MicroDynamics.m file.
+We provide two files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU, a meta data file CD_meta_clinic. We can learn a microbial progression model by running MicroDynamics.m file.
 
 # Reference
