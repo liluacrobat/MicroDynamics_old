@@ -26,6 +26,7 @@ Sample_3  Inflammatory (B1)
 
 ## Running
 ### 1. Prepare microbial data
+Load the OTU table and meta data. Exclude samples without enough sequencing depth (default:10,000). 
 
 ### 2. Feature selection
 
@@ -36,7 +37,7 @@ Sample_3  Inflammatory (B1)
 ## Output
 
 # Example
-We provide two files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU.tsv, and a meta data file CD_meta_clinic.tsv. 
+We provide two tab delimited files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU.txt, and a meta data file CD_meta_clinic.txt. 
 
 Due to the storage limitation of GitHub please download the CD_16S_OTU.tsv file from https://drive.google.com/file/d/1OhjjGS5Kw5G4ImOlzy8G8HluHM1aNjUN/view?usp=sharing and put the file under the 'example/data' directory. 
 
