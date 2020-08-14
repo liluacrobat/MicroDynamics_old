@@ -8,10 +8,10 @@ git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
 # Usage
 ## Input
-There are two input files for the MicroDynamics pipeline including an OTU table and a meta file of disease behavior. The following example is a human gut microbiom data set of Crohn's disease
+There are two input files for the MicroDynamics pipeline including an OTU table and a meta file of disease behavior. The following example is a human gut microbiom data set of Crohn's disease. 
 ### OTU table of 16S rRNA sequences
 ```bash
-  Sample_1 Sample_2 Sample_3
+OTU_ID Sample_1 Sample_2 Sample_3
 OTU1  15  30  12
 OTU2  152 116 130
 OTU3  27  208 74
