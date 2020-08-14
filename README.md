@@ -40,7 +40,7 @@ We provide two files of a human gut microbiome data set [1] in the example direc
 
 Due to the storage limitation of GitHub please download the CD_16S_OTU.tsv file from https://drive.google.com/file/d/1OhjjGS5Kw5G4ImOlzy8G8HluHM1aNjUN/view?usp=sharing and put the file under the 'example/data' directory. 
 
-Then, we can learn a microbial progression model by running MicroDynamics.m.
+Then, we can learn a microbial progression model by running Demo_MicroDynamics.m.
 
 # Reference
 [1] Halfvarson, Jonas, Colin J. Brislawn, Regina Lamendella, Yoshiki Vázquez-Baeza, William A. Walters, Lisa M. Bramer, Mauro D'amato et al. "Dynamics of the human gut microbiome in inflammatory bowel disease." *Nature Microbiology* 2, no. 5 (2017): 1-7.
