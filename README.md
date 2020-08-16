@@ -34,6 +34,8 @@ Load the OTU table and meta data. Exclude samples without enough sequencing dept
 
 ### 4. Embedded structuring learning
 
+### 5. Visualization
+
 ## Output
 
 # Example
