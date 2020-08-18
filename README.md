@@ -15,14 +15,14 @@ The following software is required
 ## Input
 There are two input files for the MicroDynamics pipeline including an OTU table and a meta file of disease behavior. The following example is a human gut microbiom data set of Crohn's disease. 
 #### OTU table of 16S rRNA sequences
-```bash
+```
 OTU_ID Sample_1 Sample_2 Sample_3
 OTU1  15  30  12
 OTU2  152 116 130
 OTU3  27  208 74
 ```
 #### Meta file of disease behavior
-```bash
+```
 Sample_ID Disease_behavior
 Sample_1  HC
 Sample_2  Penetrating (B3)
@@ -35,7 +35,7 @@ Load the OTU table and meta data. Exclude samples without enough sequencing dept
 ```
 [Table_otu, Table_clinic] = script_data_processing(filen_otu, file_meta, params)
 ```
-#### Optional argument  
+#### Optional arguments  
 ```
 params       
     -- min_count
@@ -62,7 +62,7 @@ Feature selection within LOGO [2] framework.
 ```
 Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 ```
-#### Optional argument 
+#### Optional arguments 
 ```
 params  
     -- sigma
@@ -76,7 +76,7 @@ The regularization parameter lambda can be optimized using 10-fold cross-validat
 ```
 [opt_lambda, ACC_LOGO] = script_param_LOGO(Table_otu, Table_clinic, params)
 ```
-#### Optional argument
+#### Optional arguments
 ```
 params       
     -- lam_ls
@@ -92,7 +92,7 @@ Perform random sampling based consensus clustering to group samples with similar
 ```
 cidx = script_consensus_clustering(Feature_Table, params)
 ```
-#### Optional argument
+#### Optional arguments
 ```
 params        
     -- cluster_num  
@@ -121,7 +121,7 @@ The parameters employed by DDRTree can be tuned using elbow method.
 ```
 [var_opt, CurveLength, Error_mse] = script_elbow_DDRTree(Feature_Table, params)
 ```
-#### Optional argument
+#### Optional arguments
 ```
 params      
     -- sigma
@@ -139,7 +139,7 @@ Visualize the principal tree learned from data.
 ```
 script_visualization(PrincipalTree, annotations, levels, params)
 ```
-#### Optional argument
+#### Optional arguments
 ```
 params        
     -- FaceColor
