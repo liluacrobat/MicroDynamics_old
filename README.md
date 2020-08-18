@@ -6,6 +6,9 @@ The setup process for the proposed pipeline requires the following steps:
 ```bash
 git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
+# Requirement
+MATLAB
+
 # Usage
 ## Input
 There are two input files for the MicroDynamics pipeline including an OTU table and a meta file of disease behavior. The following example is a human gut microbiom data set of Crohn's disease. 
