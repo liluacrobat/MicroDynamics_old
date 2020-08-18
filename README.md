@@ -57,7 +57,7 @@ params
          Mapping from class categories to numerical labels
 ```
 
-### 2. Feature selection
+### 2. Identifying disease associated OTUs
 Feature selection within LOGO [2] framework.
 ```
 Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
