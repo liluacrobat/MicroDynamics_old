@@ -58,7 +58,7 @@ params
 ```
 
 ### 2. Identifying disease associated OTUs
-Feature selection within LOGO [2] framework.
+Feature selection within LOGO [1] framework.
 ```
 Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 ```
@@ -106,7 +106,7 @@ The number of clusters can be estimated based on gap statistics.
 ```
 
 ### 4. Embedded structuring learning
-Learn a principal tree using DDRTree [3] method.
+Learn a principal tree using DDRTree [2] method.
 ```
 params    
     -- sigma
@@ -155,13 +155,13 @@ params
 ```
 
 ## Example
-We provide two tab delimited files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU.txt, and a meta data file CD_meta_clinic.txt. 
+We provide two tab delimited files of a human gut microbiome data set [3] in the example directory: a OTU table file CD_16S_OTU.txt, and a meta data file CD_meta_clinic.txt. 
 
 Due to the storage limitation of GitHub, please download the CD_16S_OTU.tsv file from https://drive.google.com/file/d/1OhjjGS5Kw5G4ImOlzy8G8HluHM1aNjUN/view?usp=sharing and put the file under the 'example/data' directory. 
 
 Then, we can learn a microbial progression model by running Demo_MicroDynamics.m. The precalculated results are stored in the 'example/precalculated/' directory. 
 
 ## Reference
-[1] Halfvarson, Jonas, Colin J. Brislawn, Regina Lamendella, Yoshiki Vázquez-Baeza, William A. Walters, Lisa M. Bramer, Mauro D'amato et al. "Dynamics of the human gut microbiome in inflammatory bowel disease." *Nature Microbiology* 2, no. 5 (2017): 1-7.  
-[2] Sun, Yijun, Sinisa Todorovic, and Steve Goodison. "Local-learning-based feature selection for high-dimensional data analysis." *IEEE Transactions on Pattern Analysis and Machine Intelligence* 32, no. 9 (2009): 1610-1626.  
-[3] Mao, Qi, Li Wang, Steve Goodison, and Yijun Sun. "Dimensionality reduction via graph structure learning." In *Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 765-774. 2015.  
+[1] Sun, Yijun, Sinisa Todorovic, and Steve Goodison. "Local-learning-based feature selection for high-dimensional data analysis." *IEEE Transactions on Pattern Analysis and Machine Intelligence* 32, no. 9 (2009): 1610-1626.  
+[2] Mao, Qi, Li Wang, Steve Goodison, and Yijun Sun. "Dimensionality reduction via graph structure learning." In *Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 765-774. 2015.  
+[3] Halfvarson, Jonas, Colin J. Brislawn, Regina Lamendella, Yoshiki Vázquez-Baeza, William A. Walters, Lisa M. Bramer, Mauro D'amato et al. "Dynamics of the human gut microbiome in inflammatory bowel disease." *Nature Microbiology* 2, no. 5 (2017): 1-7.  
