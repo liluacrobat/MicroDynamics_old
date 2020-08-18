@@ -1,11 +1,13 @@
 # MicroDynamics
 MicroDynamics is a pipeline for delineating community dynamics of human microbiome associated with disease progression.
+
 ## Setup
 The setup process for the proposed pipeline requires the following steps:
 ### Download the pipeline
 ```bash
 git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
+
 ### Requirement
 The following software is required
 * MATLAB
@@ -36,7 +38,7 @@ Load the OTU table and meta data. Exclude samples without enough sequencing dept
 ```
 #### Optional argument  
 ```
-params  
+params       
     -- min_count
          Number of observation (sequence) count to apply as the minimum
          total observation count of a sample for that sample to be retained.
@@ -55,8 +57,9 @@ params
     -- mapping
          Mapping from class categories to numerical labels
 ```
+
 ### 2. Feature selection
-Feature selection within LOGO framework.
+Feature selection within LOGO [2] framework.
 ```
 Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 ```
@@ -64,7 +67,7 @@ Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 ```
 params  
     -- sigma
-         Kernel width (k nearest neighbor)[default: 10]
+         Kernel width (k nearest neighbor) [default: 10]
     -- lambda
          Regularization parameter [default: 10^-4]
     -- threshold
@@ -80,23 +83,86 @@ params
     -- lam_ls
          Range of the regularization parameter lambda [default: 10^-5~100]
     -- sigma
-         Kernel width (k nearest neighbor)[default: 10]
+         Kernel width (k nearest neighbor) [default: 10]
     -- folds
          Number of folds for cross-validation [default: 10]
 ```
 
 ### 3. Random sampling based consensus clustering
+Perform random sampling based consensus clustering to group samples with similar microbial community composition.
+```
+cidx = script_consensus_clustering(Feature_Table, params)
+```
+#### Optional argument
+```
+params        
+    -- cluster_num  
+         Number of clusters
+    -- iters        
+         Number of iterations
+```
+The number of clusters can be estimated based on gap statistics.
+```
+[cluster_num, eva_Gap] = script_kmeans_gap(Feature_Table)
+```
 
 ### 4. Embedded structuring learning
+Learn a principal tree using DDRTree [3] method.
+```
+params    
+    -- sigma
+         Bandwidth parameter
+    -- lambda
+         Regularization parameter for inverse graph embedding
+    -- col_label
+         The Column of the clinical information used for feature
+         selection
+```
+The parameters employed by DDRTree can be tuned using elbow method.
+```
+[var_opt, CurveLength, Error_mse] = script_elbow_DDRTree(Feature_Table, params)
+```
+#### Optional argument
+```
+params      
+    -- sigma
+         Bandwidth parameter
+    -- lambda
+         Regularization parameter for inverse graph embedding
+    -- f_sig
+         Optimize the bandwidth [0: optimize lambda; 1: optimize sigma]
+    -- var_ls
+         Range of the variable to be tuned
+```
 
 ### 5. Visualization
+Visualize the principal tree learned from data.
+```
+script_visualization(PrincipalTree, annotations, levels, params)
+```
+#### Optional argument
+```
+params        
+    -- FaceColor
+         Facecolor for annotations
+    -- order
+         Order used to sort labels
+    -- post_flag
+         Flag of post processing [default: 0]
+           0 : principal tree before post-processing
+           1 : principal tree after post-processing
+    -- prog_flag
+         Plot samples of the extracted progression paths [default: 0]
+```
 
 ## Example
 We provide two tab delimited files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU.txt, and a meta data file CD_meta_clinic.txt. 
 
 Due to the storage limitation of GitHub please download the CD_16S_OTU.tsv file from https://drive.google.com/file/d/1OhjjGS5Kw5G4ImOlzy8G8HluHM1aNjUN/view?usp=sharing and put the file under the 'example/data' directory. 
 
-Then, we can learn a microbial progression model by running Demo_MicroDynamics.m. The precalculated results are stored in the directory 'example/precalculated/'
+Then, we can learn a microbial progression model by running Demo_MicroDynamics.m. The precalculated results are stored in the 'example/precalculated/' directory. 
 
 ## Reference
 [1] Halfvarson, Jonas, Colin J. Brislawn, Regina Lamendella, Yoshiki Vázquez-Baeza, William A. Walters, Lisa M. Bramer, Mauro D'amato et al. "Dynamics of the human gut microbiome in inflammatory bowel disease." *Nature Microbiology* 2, no. 5 (2017): 1-7.
+[2] Sun, Yijun, Sinisa Todorovic, and Steve Goodison. "Local-learning-based feature selection for high-dimensional data analysis." *IEEE Transactions on Pattern Analysis and Machine Intelligence* 32, no. 9 (2009): 1610-1626.
+[3] Mao, Qi, Li Wang, Steve Goodison, and Yijun Sun. "Dimensionality reduction via graph structure learning." In *Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 765-774. 2015.
