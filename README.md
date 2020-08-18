@@ -29,42 +29,67 @@ Sample_3  Inflammatory (B1)
 ```
 
 ### Running
-#### 1. Preprocesssing
+### 1. Preprocesssing
 Load the OTU table and meta data. Exclude samples without enough sequencing depth (default:10,000). 
 ```
 [Table_otu, Table_clinic] = script_data_processing(filen_otu, file_meta, params)
 ```
-##### Optional argument  
+#### Optional argument  
 ```
-params  : parameters
-      -- min_count
-           Number of observation (sequence) count to apply as the minimum
-           total observation count of a sample for that sample to be retained.
-           If you want to include samples with sequencing depth higher than
-           or equal to 10,000, you specify 10,000. [default: 10,000]
-      -- pseudo_count
-           A small number added to the relative abundance before 10-base log
-           transformation. [default: 10^-6]
-      -- last_tax
-           Flag of whether the last column of the OTU table is taxonomy
-           or not. If the last column of the table is the taxonomy, you
-           specify 1. [default: 0]
-      -- col_label
-           The Column of the clinical information used for feature
-           selection
-      -- mapping
-           Mapping from class categories to numerical labels
+params  
+    -- min_count
+         Number of observation (sequence) count to apply as the minimum
+         total observation count of a sample for that sample to be retained.
+         If you want to include samples with sequencing depth higher than
+         or equal to 10,000, you specify 10,000 [default: 10,000]
+    -- pseudo_count
+         A small number added to the relative abundance before 10-base log
+         transformation [default: 10^-6]
+    -- last_tax
+         Flag of whether the last column of the OTU table is taxonomy
+         or not. If the last column of the table is the taxonomy, you
+         specify 1 [default: 0]
+    -- col_label
+         The Column of the clinical information used for feature
+         selection
+    -- mapping
+         Mapping from class categories to numerical labels
 ```
-#### 2. Feature selection
+### 2. Feature selection
 Feature selection within LOGO framework.
 ```
 Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 ```
-#### 3. Random sampling based consensus clustering
+#### Optional argument 
+```
+params  
+    -- sigma
+         Kernel width (k nearest neighbor)[default: 10]
+    -- lambda
+         Regularization parameter [default: 10^-4]
+    -- threshold
+         Threshold of feature weight
+```
+The regularization parameter lambda can be optimized using 10-fold cross-validation.
+```
+[opt_lambda, ACC_LOGO] = script_param_LOGO(Table_otu, Table_clinic, params)
+```
+#### Optional argument
+```
+params       
+    -- lam_ls
+         Range of the regularization parameter lambda [default: 10^-5~100]
+    -- sigma
+         Kernel width (k nearest neighbor)[default: 10]
+    -- folds
+         Number of folds for cross-validation [default: 10]
+```
 
-#### 4. Embedded structuring learning
+### 3. Random sampling based consensus clustering
 
-#### 5. Visualization
+### 4. Embedded structuring learning
+
+### 5. Visualization
 
 ## Example
 We provide two tab delimited files of a human gut microbiome data set [1] in the example directory: a OTU table file CD_16S_OTU.txt, and a meta data file CD_meta_clinic.txt. 
