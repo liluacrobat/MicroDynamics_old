@@ -36,7 +36,7 @@ Load the OTU table and meta data. Exclude samples without enough sequencing dept
 [Table_otu, Table_clinic] = script_data_processing(filen_otu, file_meta, params)
 ```
 ##### Input
-```bash
+```
   filename_otu  : path to the file of a DxN OTU table, where D is the number of
                   OTUs and N is the number of samples
   filename_meta : path to the meta file of clinic information, where the first
