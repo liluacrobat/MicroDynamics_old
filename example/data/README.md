@@ -1,4 +1,4 @@
-Fecal microbial data of patients with Crohn's disease obtained from a previous published study [1].
+Fecal microbial data of patients with Crohn's disease obtained from a previously published study [1].
 
 CD_16S_OTU.tsv: OTU table of 16S rRNA sequences
 CD_meta_clinic.tsv: meta file includes disease behavior information
