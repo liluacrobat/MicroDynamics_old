@@ -7,7 +7,7 @@ The setup process for the proposed pipeline requires the following steps:
 git clone https://github.com/liluacrobat/MicroDynamics.git
 ```
 ### Requirement
-The following software is required:
+The following software is required
 * MATLAB
 
 ## Usage
