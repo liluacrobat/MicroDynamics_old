@@ -11,27 +11,27 @@ function Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
 %            Relative abundance of OTUs after 10-base log transformation
 %       -- tax
 %            Taxonomy
-%   Table_clinic : meta table of clinic information
+%   Table_clinic : Meta table of clinic information
 % 
-%   params       : parameters
+%   params       : Parameters
 %       -- sigma
-%            kernel width (k nearest neighbor)[default: 10]
+%            Kernel width (k nearest neighbor) [default: 10]
 %       -- lambda
-%            regularization parameter [default: 10^-4]
+%            Regularization parameter [default: 10^-4]
 %       -- threshold
-%            threshold of feature weight
+%            Threshold of feature weight
 %--------------------------------------------------------------------------
 % Output
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax  
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel 
-%            relative abundance of the selected OTUs after 10-base log 
+%            Relative abundance of the selected OTUs after 10-base log 
 %            transformation
 %       -- weight
-%            feature weights of the selected OTUs learned from LOGO
+%            Feature weights of the selected OTUs learned from LOGO
 %       -- weight_raw
-%            feature weights of all the OTUs learned from LOGO
+%            Feature weights of all the OTUs learned from LOGO
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020

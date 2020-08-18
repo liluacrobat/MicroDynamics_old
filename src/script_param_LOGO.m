@@ -11,15 +11,15 @@ function [opt_lambda, ACC_LOGO] = script_param_LOGO(Table_otu, Table_clinic, par
 %            Relative abundance of OTUs after 10-base log transformation
 %       -- tax
 %            Taxonomy
-%   Table_clinic : meta table of clinic information
+%   Table_clinic : Meta table of clinic information
 % 
-%   params       : parameters
+%   params       : Parameters
 %       -- lam_ls
-%            range of the regularization parameter lambda [default: 10^-5~100]
+%            Range of the regularization parameter lambda [default: 10^-5~100]
 %       -- sigma
-%            kernel width (k nearest neighbor)[default: 10]
+%            Kernel width (k nearest neighbor) [default: 10]
 %       -- folds
-%            number of folds for cross-validation [default: 10]
+%            Number of folds for cross-validation [default: 10]
 %--------------------------------------------------------------------------
 % Output
 %   opt_lambda : optimal value of the

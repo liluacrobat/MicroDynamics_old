@@ -4,18 +4,18 @@ function [cluster_num, eva_Gap] = script_kmeans_gap(Feature_Table)
 %
 %--------------------------------------------------------------------------
 % Input
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel
-%            relative abundance of the selected OTUs after 10-base log
+%            Relative abundance of the selected OTUs after 10-base log
 %            transformation
 %       -- weight
-%            feature weight of the selected OTUs learned from LOGO
+%            Feature weight of the selected OTUs learned from LOGO
 %--------------------------------------------------------------------------
 % Output
-%   cluster_num  : optimal number of clusters
-%   eva_Gap      : gap statistics
+%   cluster_num  : Optimal number of clusters
+%   eva_Gap      : Gap statistics
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020

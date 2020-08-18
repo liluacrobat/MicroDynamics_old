@@ -4,22 +4,31 @@ function [ACC, w_history, Predict_value] = script_crossvail_LOGO(X, label, Para)
 %
 %--------------------------------------------------------------------------
 % INPUT:
-%     X:  training data: [x1,x2,...xn] Each column is an observation
-%     label:  class label = {1,2,...,C}
-%     Para:  parameters. More specifically,
-%            Para.distance: distance (eg. block, euclidean)
-%            Para.sigma: kernel width (k nearest neighbor)
-%            Para.lambda: regulariztion parameter
-%            Para.kernel: kernel
-%            Para.maxit: maximum number of iteration
-%            Para.folds: number of folds
-%            Para.soft: 1: exponential kernel; 0: limited kernel
-%            Para.plot: 1: plot of the learning process; 0: do not plot
+%     X     :  Training data: [x1,x2,...xn] Each column is an observation
+%     label :  Class label = {1,2,...,C}
+%     Para  :  Parameters 
+%         -- distance
+%              Distance (eg. block, euclidean)
+%         -- sigma
+%              Kernel width (k nearest neighbor)
+%         -- lambda
+%              Regulariztion parameter
+%         -- kernel
+%              Kernel
+%         -- maxit
+%              Maximum number of iteration
+%         -- folds
+%              Number of folds
+%         -- soft
+%              Kernel type [1: Exponential kernel; 0: limited kernel]
+%         -- plot
+%              Flag of showing the learning process [1: Plot of the learning
+%              process; 0: do not plot]
 %--------------------------------------------------------------------------
 % OUTPUT:
-%     ACC: crossvalidation accuracy of each fold
-%     w_history: feature weight of each fold
-%     Predict_value: prediction value
+%     ACC: Crossvalidation accuracy of each fold
+%     w_history: Feature weight of each fold
+%     Predict_value: Prediction value
 %--------------------------------------------------------------------------
 % by Lu Li
 % update history: 7/23/2018

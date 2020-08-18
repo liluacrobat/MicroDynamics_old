@@ -1,32 +1,32 @@
 function [var_opt, CurveLength, Error_mse] = script_elbow_DDRTree(Feature_Table, params)
 %% ========================================================================
-% Embedded structure learning
+% Estimate the parameters employed by DDRTree using elbow method.
 %
 %--------------------------------------------------------------------------
 % Input
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel
-%            relative abundance of the selected OTUs after 10-base log
+%            Relative abundance of the selected OTUs after 10-base log
 %            transformation
 %       -- weight
-%            feature weight of the selected OTUs learned from LOGO
+%            Feature weight of the selected OTUs learned from LOGO
 %
-%   params       : parameters
+%   params       : Parameters
 %       -- sigma
-%            bandwidth parameter
+%            Bandwidth parameter
 %       -- lambda
-%            regularization parameter for inverse graph embedding
+%            Regularization parameter for inverse graph embedding
 %       -- f_sig
-%            optimize the bandwidth (0: optimize lambda; 1: optimize sigma)
+%            Optimize the bandwidth [0: optimize lambda; 1: optimize sigma]
 %       -- var_ls
-%            range of the variable to be tuned
+%            Range of the variable to be tuned
 %--------------------------------------------------------------------------
 % Output
-%   var_opt     : optimal vale of the tuned variable
-%   CurveLength : total length of the principal tree
-%   Error_mse   : mean squared error
+%   var_opt     : Optimal vale of the tuned variable
+%   CurveLength : Total length of the principal tree
+%   Error_mse   : Mean squared error
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020

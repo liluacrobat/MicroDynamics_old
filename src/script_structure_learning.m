@@ -4,48 +4,48 @@ function PrincipalTree = script_structure_learning(Feature_Table, Table_clinic, 
 %
 %--------------------------------------------------------------------------
 % Input
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax  
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel 
-%            relative abundance of the selected OTUs after 10-base log 
-%            transformation
+%            Relative abundance of the selected OTUs after 10-base log 
+%            Transformation
 %       -- weight
-%            feature weight of the selected OTUs learned from LOGO
-%   Table_clinic : meta table of clinic information
+%            Feature weight of the selected OTUs learned from LOGO
+%   Table_clinic : Meta table of clinic information
 % 
-%   params       : parameters
+%   params       : Parameters
 %       -- sigma
-%            bandwidth parameter
+%            Bandwidth parameter
 %       -- lambda
-%            regularization parameter for inverse graph embedding
+%            Regularization parameter for inverse graph embedding
 %       -- col_label
 %            The Column of the clinical information used for feature
 %            selection
 %--------------------------------------------------------------------------
 % Output
-%   PrincipalTree : principal tree learned from data
+%   PrincipalTree : Principal tree learned from data
 %       -- W
-%            projection matrix
+%            Projection matrix
 %       -- projection 
-%            projection of data points in the sapce of reduced dimension
+%            Projection of data points in the sapce of reduced dimension
 %       -- edges
-%            edges of the principal tree
+%            Edges of the principal tree
 %       -- edges_post
-%            edges of the principal tree after post processing
+%            Edges of the principal tree after post processing
 %       -- PTree
-%            data points of the principal tree
+%            Data points of the principal tree
 %       -- PTree_post
-%            data points of the principal tree after post processing
+%            Data points of the principal tree after post processing
 %       -- ProgPath
-%            extracted progression path including the ordered index of samples
+%            Extracted progression path including the ordered index of samples
 %       -- ProgPath_tree
-%            extracted progression path including the ordered index of tree
+%            Extracted progression path including the ordered index of tree
 %            points
 %       -- ProgDis
-%            progression distance of samples along the extracted path
+%            Progression distance of samples along the extracted path
 %       -- DataProjection
-%            projection of data on the principalk tree
+%            Projection of data on the principalk tree
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020

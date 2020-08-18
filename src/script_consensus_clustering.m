@@ -4,20 +4,20 @@ function cidx = script_consensus_clustering(Feature_Table, params)
 %
 %--------------------------------------------------------------------------
 % Input
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel
-%            relative abundance of the selected OTUs after 10-base log
+%            Relative abundance of the selected OTUs after 10-base log
 %            transformation
 %       -- weight
-%            feature weight of the selected OTUs learned from LOGO
-%   params        : parameters
-%       -- cluster_num  : number of clusters
-%       -- iters        : number of iterations
+%            Feature weight of the selected OTUs learned from LOGO
+%   params        : Parameters
+%       -- cluster_num  : Number of clusters
+%       -- iters        : Number of iterations
 %--------------------------------------------------------------------------
 % Output
-%   cidx : cluster labels
+%   cidx : Cluster labels
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020

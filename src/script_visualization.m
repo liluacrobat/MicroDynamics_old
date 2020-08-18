@@ -4,28 +4,28 @@ function script_visualization(PrincipalTree, annotations, levels, params)
 %
 %--------------------------------------------------------------------------
 % Input
-%   Feature_Table : table of the selected OTUs
+%   Feature_Table : Table of the selected OTUs
 %       -- tax
-%            taxonomy of the selected OTUs
+%            Taxonomy of the selected OTUs
 %       -- logRel
-%            relative abundance of the selected OTUs after 10-base log
+%            Relative abundance of the selected OTUs after 10-base log
 %            transformation
 %       -- weight
-%            feature weight of the selected OTUs learned from LOGO
-%   annotations   : annotation of sampls
-%   levels        : annotation levels
+%            Feature weight of the selected OTUs learned from LOGO
+%   annotations   : Annotation of sampls
+%   levels        : Annotation levels
 %
-%   params        : parameters
+%   params        : Parameters
 %       -- FaceColor
-%            facecolor for annotations
+%            Facecolor for annotations
 %       -- order
-%            order used to sort labels
+%            Order used to sort labels
 %       -- post_flag
-%            flag of post processing (default: 0)
+%            Flag of post processing [default: 0]
 %              0 : principal tree before post-processing
 %              1 : principal tree after post-processing
 %       -- prog_flag
-%            plot samples of the extracted progression paths (default: 0)
+%            Plot samples of the extracted progression paths [default: 0]
 %--------------------------------------------------------------------------
 % Author: Lu Li
 % update history: 08/10/2020
