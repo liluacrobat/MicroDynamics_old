@@ -31,18 +31,12 @@ Sample_3  Inflammatory (B1)
 ### Running
 #### 1. Preprocesssing
 Load the OTU table and meta data. Exclude samples without enough sequencing depth (default:10,000). 
-
-```bash
+```
 [Table_otu, Table_clinic] = script_data_processing(filen_otu, file_meta, params)
 ```
-##### Input
+##### Optional argument  
 ```
-  filename_otu  : path to the file of a DxN OTU table, where D is the number of
-                  OTUs and N is the number of samples
-  filename_meta : path to the meta file of clinic information, where the first
-                  column is the sample ID
-
-  params        : parameters
+params  : parameters
       -- min_count
            Number of observation (sequence) count to apply as the minimum
            total observation count of a sample for that sample to be retained.
@@ -61,20 +55,11 @@ Load the OTU table and meta data. Exclude samples without enough sequencing dept
       -- mapping
            Mapping from class categories to numerical labels
 ```
-##### Output
-```bash
-  Table_otu : OTU table
-      -- rel
-           Relative abundance of OTUs
-      -- logRel
-           Relative abundance of OTUs after 10-base log transformation
-      -- tax
-           Taxonomy
-  Table_clinic : meta table of clinic information
-```
-
 #### 2. Feature selection
-
+Feature selection within LOGO framework.
+```
+Feature_Table = script_feature_LOGO(Table_otu, Table_clinic, params)
+```
 #### 3. Random sampling based consensus clustering
 
 #### 4. Embedded structuring learning
