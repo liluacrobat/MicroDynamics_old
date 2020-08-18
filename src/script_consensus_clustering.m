@@ -1,6 +1,6 @@
 function cidx = script_consensus_clustering(Feature_Table, params)
 %% ========================================================================
-% Feature selection within LOGO framework
+% Random sampling based consensus clustering
 %
 %--------------------------------------------------------------------------
 % Input

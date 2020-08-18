@@ -1,6 +1,6 @@
 function script_visualization(PrincipalTree, annotations, levels, params)
 %% ========================================================================
-% Embedded structure learning
+% Visualize the principal tree learned from data
 %
 %--------------------------------------------------------------------------
 % Input
